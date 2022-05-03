@@ -14,6 +14,9 @@ Implementar login (página de login, banco de dados e uso de sessão)
 Implementar operações de manipulação de pacotes de viagem (operações de inclusão, exclusão e listagem e páginas correspondentes a essas operações)
 Fazer controle de acesso para que só o usuário que esteja utilizando login possa fazer cadastro de pacote
 
+# Requisitos
+
+![requisitos](https://user-images.githubusercontent.com/92065382/166590836-c516414f-bb2e-4547-b3f3-bd2a4977a904.png)
 
 # Ìcones
 - :package: new functions
