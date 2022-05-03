@@ -1,0 +1,35 @@
+@model Packege
+<header>
+
+    <h2>Cadastro Pacotes Turisticos</h2>
+
+    <form class="FormPkg" method="post" asp-action="Editar">
+        <h2>Informações dos Pacotes</h2>
+        <input type="hidden" asp-for="id">
+        <p>
+            <label>Nome do Pacote</label>
+            <input asp-for="nome">
+        </p>
+        <p>
+            <label>Cidade de Origem</label>
+            <input asp-for="origem">
+        </p>
+        <p>
+            <label>Cidade de Destino</label>
+            <input asp-for="destino">
+        </p>
+        <p>
+            <label>Principais Atrativos</label>
+            <input asp-for="atrativos">
+        </p>
+        <p>
+            <label>Data Saida</label>
+            <input type="date" asp-for="saida">
+        </p>
+        <p>
+            <label>Data Retorno</label>
+            <input type="date" asp-for="retorno">
+        </p>
+        <input type="submit" value="Cadastrar">
+    </form>
+</header>

@@ -1,0 +1,83 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Destino Certo</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="topbar">
+                <div>
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <a class="menu-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <li class="menu-item">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            <a class="menu-link" asp-area="" asp-controller="Home" asp-action="Cadastro">Cadastre-se</a>
+                        </li>
+                        <li class="menu-item">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                            <a class="menu-link" asp-area="" asp-controller="Home" asp-action="Listar">Lista De
+                                Pacotes</a>
+                        </li>
+                        <li class="menu-item">
+                            @if (Context.Session.GetInt32("id") == null)
+                                {
+                                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                <a class="menu-link" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                                }
+                        </li>
+                        <li class="menu-item">
+                                @if (Context.Session.GetInt32("id") == 1)
+                                {
+                                <div>
+
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    <a class="menu-link" asp-area="" asp-controller="Home" asp-action="Cadastrar">Cadastro
+                                        de
+                                        pacotes</a>
+                                </div>
+                                }
+                        </li>
+                        <li class="nome-usu">
+                                @if (Context.Session.GetInt32("id") != null)
+                                {
+                                <span class="nome">Olá @Context.Session.GetString("Nome")</span>
+
+                                }
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>
+                Copyright &copy; 2022
+            </p>
+            <div class="social-list">
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

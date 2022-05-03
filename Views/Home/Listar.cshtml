@@ -1,0 +1,47 @@
+@model IEnumerable<Packege>
+@using Microsoft.AspNetCore.Http
+
+<head>
+    <meta charset="utf-8" />
+    <title>Destino Certo - Lista De Pacotes</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<header>
+
+    <div class="sction">
+
+        <h2>Listagem de Pacotes turisticos</h2>
+        <h2>@ViewBag.Mensagem</h2>
+        @foreach (Packege pkg in Model)
+        {
+            <div class="pacotes">
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="~/imagens/cardimg.jpg" alt="imagem do projeto Casa Bela" />
+                    </div>
+                    <div class="card-info">
+                        <h2>@pkg.nome</h2>
+                        <h3>@pkg.destino</h3>
+                        <div class="origem">
+                            <h6>Origem:</h6>
+                            <p>@pkg.origem</p>
+                        </div>
+                        <div class="atrativos">
+                            <h6>Atrativos:</h6>
+                            <p>@pkg.atrativos</p>
+                        </div>
+                        @if (Context.Session.GetInt32("id") == 1)
+                        {
+                            <h4>
+                                <a class="btn" href="/Home/Excluir?Id=@pkg.id">Excluir</a>
+                                <a class="btn" href="/Home/Editar?Id=@pkg.id">Editar</a>
+                            </h4>
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</header>
