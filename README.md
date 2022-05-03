@@ -1,5 +1,7 @@
 # Atividade 
 
+Atividade referente ao modulo 4 (Estruturar e implementar banco de dados para aplicações web), do curso de informatica para a web do Senac-Rs.
+
 # Contexto
  
 Conhecendo as possibilidades de integração do sistema web com o banco de dados, o product owner (PO) alocou você para desenvolver um sistema para uma agência de viagens. Como os demais programadores estão envolvidos em outros projetos, cabe a você realizar a programação em full stack do sistema.
